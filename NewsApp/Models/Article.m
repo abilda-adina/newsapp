@@ -11,11 +11,18 @@
 
 @implementation Article
 
-- (NSDate *) parsePublishedAtFromString:(NSString *)string {
+- (NSDate *)parsePublishedAtFromString:(NSString *)string {
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-    [dateFormat setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
+    [dateFormat setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss'Z'"];
     
     return [dateFormat dateFromString:string];
+}
+
+- (NSString *)formatPublishedAt {
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"dd-MM-yyyy HH:mm"];
+    
+    return [formatter stringFromDate:self.publishedAt];
 }
 
 - (instancetype)initWithAttributes:(NSDictionary *)attributes {
@@ -27,12 +34,13 @@
     self.author = [attributes valueForKeyPath:@"author"];
     self.title = [attributes valueForKeyPath:@"title"];
     self.body = [attributes valueForKeyPath:@"description"];
-    self.url = [attributes valueForKeyPath:@"url"];
-    self.imageUrl = [attributes valueForKeyPath:@"urlToImage"];
+    self.url = [NSURL URLWithString:[attributes valueForKeyPath:@"url"]];
+    self.imageUrl = [NSURL URLWithString:[attributes valueForKeyPath:@"urlToImage"]];
     self.publishedAt = [self parsePublishedAtFromString:[attributes valueForKeyPath:@"publishedAt"]];
     
     return self;
 }
+
 
 + (NSURLSessionDataTask *)fetchLatestWithBlock:(void (^)(NSArray *articles, NSError *error))block {
     NSDictionary *parameters = @{

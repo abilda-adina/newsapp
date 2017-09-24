@@ -93,7 +93,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1673" y="-1134"/>
+            <point key="canvasLocation" x="-7" y="-1412"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Fsy-He-dBW">
@@ -113,7 +113,7 @@
             </objects>
             <point key="canvasLocation" x="24.800000000000001" y="-567.16641679160421"/>
         </scene>
-        <!--Article List View Controller-->
+        <!--News-->
         <scene sceneID="GjV-S9-I02">
             <objects>
                 <tableViewController id="Kk5-SH-aKy" customClass="ArticleListViewController" sceneMemberID="viewController">
@@ -132,26 +132,23 @@
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="News Headline" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LBQ-YW-Nsv">
                                             <rect key="frame" x="16" y="8" width="240" height="20.5"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="240" id="HHN-BW-coc"/>
-                                            </constraints>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fzh-9k-bLX">
                                             <rect key="frame" x="16" y="38.5" width="240" height="35"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="240" id="fGR-Rf-h9G"/>
-                                            </constraints>
                                             <string key="text">Although the end of September is the deadline for passing a bill with a simple majority in the Senate for this federal budget, there's no reason the party couldn't start the wheels turning for another vote next year - or, conceivably, simply change the rules, as Donald Trump has suggested.</string>
                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3vO-xX-HN7">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3vO-xX-HN7">
                                             <rect key="frame" x="267" y="8" width="100" height="100"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="100" id="N60-2L-IJp"/>
+                                                <constraint firstAttribute="height" constant="100" id="zsC-A5-9wP"/>
+                                            </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="02/16/1995" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Egm-za-KUx">
                                             <rect key="frame" x="16" y="87" width="72" height="16.5"/>
@@ -166,7 +163,11 @@
                                         <constraint firstItem="LBQ-YW-Nsv" firstAttribute="leading" secondItem="H5b-c6-JHf" secondAttribute="leadingMargin" constant="8" id="9Xw-YF-6wJ"/>
                                         <constraint firstItem="fzh-9k-bLX" firstAttribute="top" secondItem="LBQ-YW-Nsv" secondAttribute="bottom" constant="10" id="BKA-Xi-0C8"/>
                                         <constraint firstItem="LBQ-YW-Nsv" firstAttribute="top" secondItem="H5b-c6-JHf" secondAttribute="topMargin" id="CF1-hW-Fhv"/>
+                                        <constraint firstItem="3vO-xX-HN7" firstAttribute="top" secondItem="H5b-c6-JHf" secondAttribute="topMargin" id="Mhd-zU-mYL"/>
+                                        <constraint firstItem="3vO-xX-HN7" firstAttribute="trailing" secondItem="H5b-c6-JHf" secondAttribute="trailingMargin" id="WQR-bV-EdJ"/>
                                         <constraint firstItem="Egm-za-KUx" firstAttribute="leading" secondItem="H5b-c6-JHf" secondAttribute="leadingMargin" constant="8" id="dAz-5w-y7f"/>
+                                        <constraint firstItem="3vO-xX-HN7" firstAttribute="leading" secondItem="fzh-9k-bLX" secondAttribute="trailing" constant="11" id="qXQ-z7-pa1"/>
+                                        <constraint firstItem="LBQ-YW-Nsv" firstAttribute="trailing" secondItem="fzh-9k-bLX" secondAttribute="trailing" id="tLq-Y3-2UG"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -182,11 +183,81 @@
                             <outlet property="delegate" destination="Kk5-SH-aKy" id="AeM-B4-fC0"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="wGT-7y-aKW"/>
+                    <navigationItem key="navigationItem" title="News" id="wGT-7y-aKW"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3D8-nf-noC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="789.60000000000002" y="-567.16641679160421"/>
         </scene>
+        <!--Article Details View Controller-->
+        <scene sceneID="iqs-su-DR3">
+            <objects>
+                <viewController storyboardIdentifier="ArticleDetailsViewController" id="NFF-07-wir" customClass="ArticleDetailsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qKf-Ae-qkA"/>
+                        <viewControllerLayoutGuide type="bottom" id="czI-SK-4gC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4c8-Gz-wsk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no-thumb.png" translatesAutoresizingMaskIntoConstraints="NO" id="udP-s9-ib8">
+                                <rect key="frame" x="24" y="28" width="343" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="TLo-8M-R6I"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="News HeadlineNews HeadlineNews HeadlineNews HeadlineNews HeadlineNews HeadlineNews HeadlineNews Headline" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qJZ-dh-QF0">
+                                <rect key="frame" x="16" y="258" width="335" height="48"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xoc-Xn-MKh">
+                                <rect key="frame" x="16" y="312" width="343" height="243.5"/>
+                                <string key="text">Shortly before his address, the Pentagon announced that the show of force underscored "the seriousness" with which the US took North Korea's "reckless" behaviour, calling the country's weapons programme a "grave threat".Shortly before his address, the Pentagon announced that the show of force underscored "the seriousness" with which the US took North Korea's "reckless" behaviour, calling the country's weapons programme a "grave threat".</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nIp-lA-e4C">
+                                <rect key="frame" x="16" y="576" width="49" height="30"/>
+                                <state key="normal" title="Source"/>
+                                <connections>
+                                    <action selector="goToArticleSource:" destination="NFF-07-wir" eventType="touchUpInside" id="VDN-3H-b8G"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Xoc-Xn-MKh" firstAttribute="trailing" secondItem="4c8-Gz-wsk" secondAttribute="trailingMargin" id="9Hv-QG-ojA"/>
+                            <constraint firstItem="qJZ-dh-QF0" firstAttribute="top" secondItem="udP-s9-ib8" secondAttribute="bottom" constant="30" id="C4C-ld-FUL"/>
+                            <constraint firstItem="udP-s9-ib8" firstAttribute="top" secondItem="qKf-Ae-qkA" secondAttribute="bottom" constant="8" id="D2J-Cm-hFs"/>
+                            <constraint firstItem="qJZ-dh-QF0" firstAttribute="leading" secondItem="4c8-Gz-wsk" secondAttribute="leadingMargin" id="JD4-TN-usr"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Xoc-Xn-MKh" secondAttribute="trailing" id="Soj-tK-6XV"/>
+                            <constraint firstItem="nIp-lA-e4C" firstAttribute="leading" secondItem="4c8-Gz-wsk" secondAttribute="leadingMargin" id="d3u-gh-xfm"/>
+                            <constraint firstItem="nIp-lA-e4C" firstAttribute="top" secondItem="Xoc-Xn-MKh" secondAttribute="bottom" constant="20.5" id="g9C-Oe-rZ7"/>
+                            <constraint firstItem="Xoc-Xn-MKh" firstAttribute="leading" secondItem="4c8-Gz-wsk" secondAttribute="leadingMargin" id="gnc-aa-7YX"/>
+                            <constraint firstItem="Xoc-Xn-MKh" firstAttribute="top" secondItem="qJZ-dh-QF0" secondAttribute="bottom" constant="6" id="gyn-KQ-vws"/>
+                            <constraint firstItem="udP-s9-ib8" firstAttribute="trailing" secondItem="4c8-Gz-wsk" secondAttribute="trailingMargin" constant="8" id="mT7-nu-bVT"/>
+                            <constraint firstItem="Xoc-Xn-MKh" firstAttribute="leading" secondItem="4c8-Gz-wsk" secondAttribute="leadingMargin" id="mhM-1R-gxM"/>
+                            <constraint firstItem="udP-s9-ib8" firstAttribute="leading" secondItem="4c8-Gz-wsk" secondAttribute="leadingMargin" constant="8" id="xgW-eN-HL3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qJZ-dh-QF0" secondAttribute="trailing" constant="8" id="yyi-Ij-jWR"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="articleImage" destination="udP-s9-ib8" id="mtp-aI-0cj"/>
+                        <outlet property="body" destination="Xoc-Xn-MKh" id="67s-Fy-nKq"/>
+                        <outlet property="linkToSource" destination="nIp-lA-e4C" id="pSP-4b-Htx"/>
+                        <outlet property="titleLabel" destination="qJZ-dh-QF0" id="U7E-1j-87d"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NCm-Uk-Fqj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1568.8" y="-567.16641679160421"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="no-thumb.png" width="200" height="200"/>
+    </resources>
 </document>

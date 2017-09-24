@@ -8,6 +8,7 @@
 
 #import "ArticleListViewController.h"
 #import "ArticleListTableViewCell.h"
+#import "ArticleDetailsViewController.h"
 #import "Article.h"
 
 @interface ArticleListViewController ()
@@ -20,8 +21,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.articles = [NSArray arrayWithObject:[[Article alloc] initWithAttributes:@{@"title":@"Test title", @"author":@"Sultan Abilda", @"description":@"Test body", @"url": @"", @"urlToImage":@"", @"publishedAt":@"2017-09-23T17:41:16Z"}]];
 
     [self fetchArticles];
 }
@@ -50,10 +49,18 @@
     
     cell.title.text = [[self.articles objectAtIndex:indexPath.row] title];
     cell.body.text = [[self.articles objectAtIndex:indexPath.row] body];
-    cell.publishedDate.text = [[self.articles objectAtIndex:indexPath.row] publishedAt];
+    cell.publishedDate.text = [[self.articles objectAtIndex:indexPath.row] formatPublishedAt];
     cell.image.image = [UIImage imageNamed:@"no-thumb.png"];
-    
+        
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    Article *article = [self.articles objectAtIndex:indexPath.row];
+    ArticleDetailsViewController *detailsViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ArticleDetailsViewController"];
+    detailsViewController.article = article;
+    
+    [self presentViewController:detailsViewController animated:YES completion:nil];
 }
 
 @end

@@ -13,13 +13,14 @@
 
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSString *body;
-@property (nonatomic, strong) NSString *url;
+@property (nonatomic, strong) NSURL *url;
 @property (nonatomic, strong) UIImage *image;
-@property (nonatomic, strong) NSString *imageUrl;
+@property (nonatomic, strong) NSURL *imageUrl;
 @property (nonatomic, strong) NSString *author;
 @property (nonatomic, strong) NSDate *publishedAt;
 
 - (instancetype)initWithAttributes:(NSDictionary *)attributes;
+- (NSString *)formatPublishedAt;
 + (NSURLSessionDataTask *)fetchLatestWithBlock:(void (^)(NSArray *posts, NSError *error))block;
 
 @end
