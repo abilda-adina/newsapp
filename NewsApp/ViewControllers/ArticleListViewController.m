@@ -51,6 +51,12 @@
     cell.body.text = [[self.articles objectAtIndex:indexPath.row] body];
     cell.publishedDate.text = [[self.articles objectAtIndex:indexPath.row] formatPublishedAt];
     cell.image.image = [UIImage imageNamed:@"no-thumb.png"];
+    cell.image.layer.borderWidth = 0.5;
+    cell.image.layer.borderColor = [UIColor blackColor].CGColor;
+    
+    UIView* separatorLineView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 405, 1)];
+    separatorLineView.backgroundColor = [UIColor colorWithRed:211/255.0 green:211/255.0 blue:211/255.0 alpha:1];
+    [cell.contentView addSubview:separatorLineView];
         
     return cell;
 }

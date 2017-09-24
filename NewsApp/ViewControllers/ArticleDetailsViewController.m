@@ -11,6 +11,7 @@
 
 @interface ArticleDetailsViewController ()
 
+@property (weak, nonatomic) IBOutlet UINavigationItem *navigationItem;
 @property (weak, nonatomic) IBOutlet UIImageView *articleImage;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *body;
@@ -20,11 +21,24 @@
 
 @implementation ArticleDetailsViewController
 
+- (void)viewWillAppear:(BOOL)animated {
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style: UIBarButtonItemStylePlain target:self action:@selector(back)];
+    
+    self.navigationItem.leftBarButtonItem = backButton;
+    self.navigationItem.backBarButtonItem = backButton;
+    
+    [super viewWillAppear:animated];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.titleLabel.text = self.article.title;
     self.body.text = self.article.body;
+}
+
+- (IBAction)back {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)goToArticleSource:(UIButton *)sender {
