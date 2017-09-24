@@ -41,15 +41,16 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSString *cellIdentifier = @"ArticleListCell";
+    Article *article = [self.articles objectAtIndex:indexPath.row];
     ArticleListTableViewCell *cell = (ArticleListTableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
     if (cell == nil) {
         cell = [[NSBundle mainBundle] loadNibNamed:@"ArticleListCell" owner:self options:nil][0];
     }
     
-    cell.title.text = [[self.articles objectAtIndex:indexPath.row] title];
-    cell.body.text = [[self.articles objectAtIndex:indexPath.row] body];
-    cell.publishedDate.text = [[self.articles objectAtIndex:indexPath.row] formatPublishedAt];
+    cell.title.text = article.title;
+    cell.body.text = article.body;
+    cell.publishedDate.text = article.formatPublishedAt;
     cell.image.image = [UIImage imageNamed:@"no-thumb.png"];
     cell.image.layer.borderWidth = 0.5;
     cell.image.layer.borderColor = [UIColor blackColor].CGColor;

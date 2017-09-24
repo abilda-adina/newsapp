@@ -25,7 +25,6 @@
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style: UIBarButtonItemStylePlain target:self action:@selector(back)];
     
     self.navigationItem.leftBarButtonItem = backButton;
-    self.navigationItem.backBarButtonItem = backButton;
     
     [super viewWillAppear:animated];
 }
