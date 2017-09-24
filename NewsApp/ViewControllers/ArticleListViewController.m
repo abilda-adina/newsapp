@@ -51,7 +51,7 @@
     cell.title.text = article.title;
     cell.body.text = article.body;
     cell.publishedDate.text = article.formatPublishedAt;
-    cell.image.image = [UIImage imageNamed:@"no-thumb.png"];
+    [cell.image setImageWithURL:article.imageUrl placeholderImage:[UIImage imageNamed:@"no-thumb.png"]];
     cell.image.layer.borderWidth = 0.5;
     cell.image.layer.borderColor = [UIColor blackColor].CGColor;
     

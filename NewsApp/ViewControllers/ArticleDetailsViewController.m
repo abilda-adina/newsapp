@@ -6,6 +6,7 @@
 //  Copyright © 2017 Kenzhebekova. All rights reserved.
 //
 
+#import <AFNetworking/UIImageView+AFNetworking.h>
 #import "ArticleDetailsViewController.h"
 #import "Article.h"
 
@@ -34,6 +35,7 @@
     
     self.titleLabel.text = self.article.title;
     self.body.text = self.article.body;
+    [self.articleImage setImageWithURL:self.article.imageUrl placeholderImage:[UIImage imageNamed:@"no-thumb.png"]];
 }
 
 - (IBAction)back {
