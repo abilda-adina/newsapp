@@ -21,16 +21,26 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    self.refreshControl.backgroundColor = [UIColor purpleColor];
+    self.refreshControl.tintColor = [UIColor whiteColor];
+    [self.refreshControl addTarget:self action:@selector(fetchArticles) forControlEvents:UIControlEventValueChanged];
 
     [self fetchArticles];
 }
 
 - (void)fetchArticles {
+    self.articles = [NSArray array];
     [Article fetchLatestWithBlock:^(NSArray *articles, NSError *error) {
         if (!error) {
             self.articles = articles;
             
             [self.tableView reloadData];
+            
+            if (self.refreshControl) {
+                [self.refreshControl endRefreshing];
+            }
         }
     }];
 }
