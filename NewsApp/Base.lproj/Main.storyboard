@@ -116,35 +116,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no-thumb.png" translatesAutoresizingMaskIntoConstraints="NO" id="udP-s9-ib8">
-                                <rect key="frame" x="24" y="100" width="343" height="200"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no-thumb.png" translatesAutoresizingMaskIntoConstraints="NO" id="udP-s9-ib8">
+                                <rect key="frame" x="16" y="84" width="343" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="TLo-8M-R6I"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="News HeadlineNews HeadlineNews HeadlineNews HeadlineNews HeadlineNews HeadlineNews HeadlineNews Headline" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qJZ-dh-QF0">
-                                <rect key="frame" x="16" y="330" width="335" height="48"/>
+                                <rect key="frame" x="16" y="314" width="343" height="48"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xoc-Xn-MKh">
-                                <rect key="frame" x="16" y="384" width="343" height="243.5"/>
+                                <rect key="frame" x="16" y="368" width="343" height="243.5"/>
                                 <string key="text">Shortly before his address, the Pentagon announced that the show of force underscored "the seriousness" with which the US took North Korea's "reckless" behaviour, calling the country's weapons programme a "grave threat".Shortly before his address, the Pentagon announced that the show of force underscored "the seriousness" with which the US took North Korea's "reckless" behaviour, calling the country's weapons programme a "grave threat".</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nIp-lA-e4C">
-                                <rect key="frame" x="16" y="648" width="49" height="30"/>
+                                <rect key="frame" x="16" y="619.5" width="49" height="30"/>
                                 <state key="normal" title="Source"/>
                                 <connections>
                                     <action selector="goToArticleSource:" destination="NFF-07-wir" eventType="touchUpInside" id="VDN-3H-b8G"/>
                                 </connections>
                             </button>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GjP-CB-0oN">
-                                <rect key="frame" x="-2" y="20" width="378" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GjP-CB-0oN">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <items>
                                     <navigationItem title="News Details" id="LdK-Dx-nMO"/>
                                 </items>
@@ -152,19 +151,22 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="GjP-CB-0oN" firstAttribute="top" secondItem="4c8-Gz-wsk" secondAttribute="top" constant="20" id="3vQ-aE-lJZ"/>
                             <constraint firstItem="Xoc-Xn-MKh" firstAttribute="trailing" secondItem="4c8-Gz-wsk" secondAttribute="trailingMargin" id="9Hv-QG-ojA"/>
                             <constraint firstItem="qJZ-dh-QF0" firstAttribute="top" secondItem="udP-s9-ib8" secondAttribute="bottom" constant="30" id="C4C-ld-FUL"/>
-                            <constraint firstItem="udP-s9-ib8" firstAttribute="top" secondItem="qKf-Ae-qkA" secondAttribute="bottom" constant="80" id="D2J-Cm-hFs"/>
                             <constraint firstItem="qJZ-dh-QF0" firstAttribute="leading" secondItem="4c8-Gz-wsk" secondAttribute="leadingMargin" id="JD4-TN-usr"/>
+                            <constraint firstAttribute="trailing" secondItem="GjP-CB-0oN" secondAttribute="trailing" id="LBz-Fm-AtQ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Xoc-Xn-MKh" secondAttribute="trailing" id="Soj-tK-6XV"/>
+                            <constraint firstItem="udP-s9-ib8" firstAttribute="top" secondItem="GjP-CB-0oN" secondAttribute="bottom" constant="20" id="YhM-gJ-LrQ"/>
                             <constraint firstItem="nIp-lA-e4C" firstAttribute="leading" secondItem="4c8-Gz-wsk" secondAttribute="leadingMargin" id="d3u-gh-xfm"/>
-                            <constraint firstItem="nIp-lA-e4C" firstAttribute="top" secondItem="Xoc-Xn-MKh" secondAttribute="bottom" constant="20.5" id="g9C-Oe-rZ7"/>
+                            <constraint firstItem="GjP-CB-0oN" firstAttribute="leading" secondItem="4c8-Gz-wsk" secondAttribute="leading" id="dyB-5g-5kd"/>
+                            <constraint firstItem="nIp-lA-e4C" firstAttribute="top" secondItem="Xoc-Xn-MKh" secondAttribute="bottom" constant="8" id="g9C-Oe-rZ7"/>
                             <constraint firstItem="Xoc-Xn-MKh" firstAttribute="leading" secondItem="4c8-Gz-wsk" secondAttribute="leadingMargin" id="gnc-aa-7YX"/>
                             <constraint firstItem="Xoc-Xn-MKh" firstAttribute="top" secondItem="qJZ-dh-QF0" secondAttribute="bottom" constant="6" id="gyn-KQ-vws"/>
-                            <constraint firstItem="udP-s9-ib8" firstAttribute="trailing" secondItem="4c8-Gz-wsk" secondAttribute="trailingMargin" constant="8" id="mT7-nu-bVT"/>
+                            <constraint firstItem="udP-s9-ib8" firstAttribute="trailing" secondItem="4c8-Gz-wsk" secondAttribute="trailingMargin" id="mT7-nu-bVT"/>
                             <constraint firstItem="Xoc-Xn-MKh" firstAttribute="leading" secondItem="4c8-Gz-wsk" secondAttribute="leadingMargin" id="mhM-1R-gxM"/>
-                            <constraint firstItem="udP-s9-ib8" firstAttribute="leading" secondItem="4c8-Gz-wsk" secondAttribute="leadingMargin" constant="8" id="xgW-eN-HL3"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="qJZ-dh-QF0" secondAttribute="trailing" constant="8" id="yyi-Ij-jWR"/>
+                            <constraint firstItem="udP-s9-ib8" firstAttribute="leading" secondItem="4c8-Gz-wsk" secondAttribute="leadingMargin" id="xgW-eN-HL3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qJZ-dh-QF0" secondAttribute="trailing" id="yyi-Ij-jWR"/>
                         </constraints>
                     </view>
                     <connections>
@@ -177,7 +179,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NCm-Uk-Fqj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1454" y="-567"/>
+            <point key="canvasLocation" x="1453.5999999999999" y="-567.16641679160421"/>
         </scene>
     </scenes>
     <resources>
